@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Serije</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Serije</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Početna stranica</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="katalog.html">Katalog</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="popularno.html">Popularno</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="nagrade.html">Nagrade</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="prijava.html">Prijava</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="kontakt.html">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container pt-5">
+      <form class="pt-5" id="form">
+        <div
+          style="display: none"
+          class="alert alert-dismissible alert-danger"
+          id="alert"
+        >
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+          ></button>
+
+          <strong>Provjerite podatke!</strong>
+          <a href="#" class="alert-link"
+            >Email ili Lozinka nisu točni, ispravite formu</a
+          >
+          i pokušajte ponovno.
+        </div>
+
+        <fieldset>
+          <legend>Prijavi se</legend>
+
+          <div class="form-group">
+            <label for="username" class="form-label mt-4">Email adresa</label>
+
+            <input
+              type="email"
+              class="form-control"
+              id="username"
+              aria-describedby="email"
+              placeholder="Unesite email"
+            />
+
+            <small id="email" class="form-text text-muted"
+              >Unesite vašu email adresu</small
+            >
+          </div>
+
+          <div class="form-group pb-2">
+            <label for="password" class="form-label mt-4">Lozinka</label>
+
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Lozinka"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Prijava</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <footer id="footer" class="footer navbar-dark bg-dark footerPrijava">
+      <div class="col-lg-12 px-5 footerBox">
+        <div class="links-container">
+          <a href="https://www.netflix.com/ba-hr/browse/genre/34399">Netflix</a>
+          <a href="https://www.imdb.com/">IMDb</a>
+          <a
+            href="https://www.amazon.com/Amazon-Video/b?ie=UTF8&node=2858905011"
+            >Amazon</a
+          >
+        </div>
+        <a href="#" class="btn btn-primary btn-back-to-top toTopBtn">Na vrh</a>
+      </div>
+    </footer>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+      integrity="sha384-xrjI6s2zJpLb6bjn38+6HQDf3Z5Iq7VgD4MnRFiq14oUY+SEHEg+hN0z+Gx5B5z6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener('scroll', function () {
+        var btnBackToTop = document.querySelector('.btn-back-to-top');
+        if (window.scrollY > 300) {
+          btnBackToTop.classList.add('show');
+        } else {
+          btnBackToTop.classList.remove('show');
+        }
+      });
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
+    </script>
+
+    <script>
+      var form = document.querySelector('#form');
+
+      var username = document.getElementById('username');
+
+      var password = document.getElementById('password');
+
+      var username_password_invalid = document.getElementById('alert');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (password.value.trim().length < 6) {
+          password.className = 'form-control is-invalid';
+
+          username_password_invalid.style.display = 'block';
+        } else if (password.value.trim().length >= 6) {
+          password.className = 'form-control is-valid';
+
+          username_password_invalid.style.display = 'none';
+        }
+        if (password.className == 'form-control is-valid') {
+          var passwd = prompt("Zapamtite lozinku 'da' / 'ne':");
+
+          if (passwd == 'da') {
+            console.log('Zapamtili ste lozinku!');
+          } else {
+            console.log('Niste zapamtili lozinku!');
+          }
+        }
+      });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

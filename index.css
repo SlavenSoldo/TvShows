@@ -1,0 +1,129 @@
+
+.card {
+  height: 500px;
+}
+
+
+.btnImbd {
+  position: absolute;
+  bottom: 0;
+
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.footerBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.links-container a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.toTopBtn {
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .footerBox {
+    flex-direction: column;
+  }
+  .toTopBtn {
+    margin: 10px 0 0;
+  }
+  .links-container a {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.footerPrijava {
+  position: absolute;
+  bottom: 0;
+}
+
+.toTopBtn {
+  position: relative;
+  right: 0;
+}
+
+.links-container a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.img-thumbnail {
+  max-height: 350px;
+}
+
+.katalogCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bigBox {
+  display: flex;
+}
+
+.cardBody {
+  max-width: 800px; 
+  margin: auto;      
+}
+
+.newsCard {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+    width: 100%;
+  }
+  .footerBox {
+    flex-direction: column;
+  }
+  .toTopBtn {
+    position: relative;
+    right: 0;
+    
+    bottom: 10px; 
+  }
+  .links-container a {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .katalogCard {
+    flex-direction: column;
+  }
+  .bigBox {
+    flex-direction: column;
+  }
+  .cardBody {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
